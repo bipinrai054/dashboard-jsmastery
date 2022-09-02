@@ -1,8 +1,17 @@
 import React from 'react';
+
+//rrd
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+
+// icons
 import { FiSettings } from 'react-icons/fi';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
+
+//css
 import './App.css';
+
+// context
+import { useStateContext } from './contexts/ContextProvider';
 
 // components
 import { Navbar, Footer, Sidebar, ThemeSettings } from './components';
@@ -29,7 +38,8 @@ import {
 import './App.css';
 
 function App() {
-  const activeMenu = true;
+  const { activeMenu } = useStateContext();
+  // const activeMenu = true;
   return (
     <div>
       <BrowserRouter>
