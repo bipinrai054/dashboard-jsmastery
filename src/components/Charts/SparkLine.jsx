@@ -16,7 +16,6 @@ export default function SparkLine({
   data,
   type,
 }) {
-  console.log(data);
   return (
     <SparklineComponent
       type={type}
