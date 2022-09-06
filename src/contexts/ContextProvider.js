@@ -13,6 +13,19 @@ export const ContextProvider = ({ children }) => {
   const [activeMenu, setActiveMenu] = React.useState(true);
   const [isClicked, setIsClicked] = React.useState(initialState);
   const [screenSize, setScreenSize] = React.useState(undefined);
+  const [currentColor, setCurrentColor] = React.useState('#03C9D7');
+  const [currentMode, setCurrentMode] = React.useState('light');
+  const [themeSettings, setThemeSettings] = React.useState(false);
+
+  const setMode = (e) => {
+    setCurrentMode(e.target.value);
+    localStorage.setItem('themeMode', e.target.value);
+  };
+
+  const setColor = (e) => {
+    setCurrentColor(e.target.value);
+    localStorage.setItem('colorMode', e.target.value);
+  };
 
   const handleClick = (clicked) => {
     setIsClicked({ ...initialState, [clicked]: true });
@@ -28,6 +41,12 @@ export const ContextProvider = ({ children }) => {
         handleClick,
         screenSize,
         setScreenSize,
+        currentColor,
+        currentMode,
+        setCurrentColor,
+        setCurrentMode,
+        themeSettings,
+        setThemeSettings,
       }}
     >
       {children}
