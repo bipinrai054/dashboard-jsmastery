@@ -530,7 +530,7 @@ export const links = [
         icon: <AiOutlineAreaChart />,
       },
 
-      {
+	    {/*{
         name: 'bar',
         icon: <AiOutlineBarChart />,
       },
@@ -553,7 +553,7 @@ export const links = [
       {
         name: 'stacked',
         icon: <AiOutlineBarChart />,
-      },
+      },*/}
     ],
   },
 ];
